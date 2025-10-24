@@ -1,0 +1,194 @@
+Perfect! Let’s create a *complete React Event Handling example* with all files, steps, commands, and expected output. I’ll provide it *fully ready to run*.
+
+---
+
+# *React Event Handling Example*
+
+---
+
+## *1. Project Setup*
+
+bash
+# 1. Create a new React project using Vite
+npx create-vite my-react-events --template react
+
+# 2. Navigate to project folder
+cd my-react-events
+
+# 3. Install dependencies
+npm install
+
+# 4. Start development server
+npm run dev
+
+
+*Open in browser:* http://localhost:5173/
+
+---
+
+## *2. Folder Structure*
+
+
+my-react-events/
+ ┣ public/
+ ┃ ┗ index.html
+ ┣ src/
+ ┃ ┣ App.jsx
+ ┃ ┗ main.jsx
+ ┗ package.json
+
+
+---
+
+## *3. public/index.html*
+
+html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Event Handling</title>
+  </head>
+  <body>
+    <!-- Root div where React will render -->
+    <div id="root"></div>
+
+    <!-- Vite injects JS automatically -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+
+---
+
+## *4. src/main.jsx*
+
+javascript
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+
+---
+
+## *5. src/App.jsx* (Event Handling Example)
+
+javascript
+import React, { useState } from "react";
+
+function App() {
+  // State to store input value
+  const [name, setName] = useState("");
+
+  // State to store button click message
+  const [message, setMessage] = useState("");
+
+  // Event handler for button click
+  const handleClick = () => {
+    setMessage(`Hello, ${name || "Guest"}!`);
+  };
+
+  // Event handler for input change
+  const handleChange = (event) => {
+    setName(event.target.value);
+  };
+
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>React Event Handling Example</h1>
+
+      {/* Input field with onChange event */}
+      <input
+        type="text"
+        placeholder="Enter your name"
+        value={name}
+        onChange={handleChange}
+        style={{ padding: "10px", fontSize: "16px" }}
+      />
+      <br />
+      <br />
+
+      {/* Button with onClick event */}
+      <button
+        onClick={handleClick}
+        style={{ padding: "10px 20px", fontSize: "16px", cursor: "pointer" }}
+      >
+        Greet Me
+      </button>
+      <br />
+      <br />
+
+      {/* Display message */}
+      <h2>{message}</h2>
+    </div>
+  );
+}
+
+export default App;
+
+
+---
+
+## *6. How It Works*
+
+1. **Input Field (onChange)**
+
+   * Every time you type, handleChange updates the name state.
+
+2. **Button (onClick)**
+
+   * When clicked, handleClick sets the message state using the current input value.
+
+3. *Display Message*
+
+   * React re-renders the <h2> element whenever message changes.
+
+---
+
+## *7. Run the Project*
+
+bash
+npm install
+npm run dev
+
+
+*Visit:* http://localhost:5173/
+
+---
+
+## *8. Output*
+
+* Page shows a heading: React Event Handling Example
+* An input box to enter your name.
+* A button labeled: Greet Me.
+* Steps to see output:
+
+  1. Type your name in the input box.
+  2. Click *Greet Me*.
+  3. The message appears below:
+
+     
+     Hello, [Your Name]!
+     
+* If no name is entered, it displays:
+
+  
+  Hello, Guest!
+  
+
+---
+
+This example covers **React events (onClick, onChange)** with *state management* to dynamically respond to user actions.
+
+---
+
+If you want, I can *combine this Event Handling example with the previous Props, State, and CSS/Sass example into a single React project* so you have *one full project with all concepts*.
+
+Do you want me to do that?
