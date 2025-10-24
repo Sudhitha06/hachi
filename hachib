@@ -1,0 +1,156 @@
+Here’s a *complete React example* demonstrating *CSS & Sass styling with data display*, including the folder setup, code, commands, and expected output.
+
+---
+
+## *React Program: CSS & Sass Styling*
+
+### *1. Folder Setup*
+
+
+my-app/
+ ┣ src/
+ ┃ ┣ App.js
+ ┃ ┣ App.css
+ ┃ ┣ App.scss
+ ┃ ┗ index.js
+
+
+---
+
+### *2. Install Dependencies*
+
+bash
+# Create React project
+npx create-vite my-react-app --template react
+cd my-react-app
+
+# Install dependencies
+npm install
+npm install sass
+
+
+---
+
+### **3. CSS File (App.css)**
+
+css
+.container {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.title {
+  color: #2c3e50;
+  font-size: 2rem;
+}
+
+
+---
+
+### **4. Sass File (App.scss)**
+
+scss
+$list-color: #27ae60;
+
+.data-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    background: lighten($list-color, 30%);
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+
+    &:hover {
+      background: darken($list-color, 10%);
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
+
+
+---
+
+### **5. React Component (App.js)**
+
+javascript
+import React from "react";
+import "./App.css";   // CSS
+import "./App.scss";  // Sass
+
+function App() {
+  const fruits = ["Apple", "Banana", "Cherry", "Mango", "Orange"];
+
+  return (
+    <div className="container">
+      <h1 className="title">Fruit List</h1>
+      <ul className="data-list">
+        {fruits.map((fruit, index) => (
+          <li key={index}>{fruit}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+
+
+---
+
+### *6. Explanation*
+
+1. App.js imports *CSS* and *Sass* for styling.
+2. The fruits array is mapped to <li> elements.
+3. App.css provides general styling like *container alignment* and *title color*.
+4. App.scss demonstrates *Sass features*:
+
+   * Variables ($list-color)
+   * Nested styles
+   * &:hover for hover effects
+5. Hovering over a fruit item changes its background and text color.
+
+---
+
+### *7. Execution Steps*
+
+bash
+# Start development server
+npm run dev
+
+
+*Open in browser:* http://localhost:5173/
+
+---
+
+### *8. Output*
+
+
+--------------------------------------
+|                                    |
+|          Fruit List                |
+| [Apple]                            |
+| [Banana]                           |
+| [Cherry]                           |
+| [Mango]                            |
+| [Orange]                           |
+|                                    |
+--------------------------------------
+
+
+* Each fruit has *light green background*.
+* Hovering changes *background to dark green* and text to *white*.
+
+---
+
+This demonstrates *how to use both CSS and Sass in a React app* to style a list dynamically.
+
+---
+
+If you want, I can *combine the previous “Props & State” example with this CSS & Sass example* so you get a *single React app demonstrating Props, State, CSS, and Sass together*.
+
+Do you want me to do that?
